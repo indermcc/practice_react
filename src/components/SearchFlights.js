@@ -1,12 +1,12 @@
-import React from "react";
-import { connect } from "react-redux";
-import DatePicker from "react-datepicker";
-import { searchFlights } from "../actions";
+import React from "react"; // import react module
+import { connect } from "react-redux";  // importing react redux connector
+import DatePicker from "react-datepicker"; // import datepicker module
+import { searchFlights } from "../actions"; // import actions
 
+/**
+ * Defining component class
+ */
 class SearchFlights extends React.Component {
-  onSubmit = (formValues) => {
-    this.props.searchFlights(formValues);
-  };
 
   state = {
     DepartureDate: "",
@@ -20,11 +20,11 @@ class SearchFlights extends React.Component {
       <div class="container-fluid">
         <div class="container">
           <div class="form-class">
-            <h1 class="text-center">Search for a flight.</h1>
+            <h1 class="text-center">Search for a flight</h1>
             <form className="search-form">
               <div className="form-group">
                 <label>
-                  Departure airport code<span class="required-class">*</span>
+                  Departure airport code
                 </label>
                 <input
                   type="text"
@@ -38,7 +38,7 @@ class SearchFlights extends React.Component {
               </div>
               <div className="form-group">
                 <label>
-                  Arrival airport code<span class="required-class">*</span>
+                  Arrival airport code
                 </label>
                 <input
                   type="text"
@@ -52,7 +52,7 @@ class SearchFlights extends React.Component {
               </div>
               <div className="form-group">
                 <label>
-                  Departure Date<span class="required-class">*</span>
+                  Departure Date
                 </label>
                 <br></br>
                 <DatePicker
@@ -64,7 +64,7 @@ class SearchFlights extends React.Component {
               </div>
               <div className="form-group">
                 <label>
-                  Return Date<span class="required-class">*</span>
+                  Return Date
                 </label>
                 <br></br>
                 <DatePicker
@@ -91,4 +91,4 @@ class SearchFlights extends React.Component {
   }
 }
 
-export default connect(null, { searchFlights })(SearchFlights);
+export default connect(null, { searchFlights })(SearchFlights); // configuring component

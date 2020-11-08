@@ -1,8 +1,11 @@
-import React from "react";
-import { connect } from "react-redux";
-import { clearSearch } from "../actions";
-import history from "../history";
+import React from "react"; // import react module
+import { connect } from "react-redux";  // import react reduct connector
+import { clearSearch } from "../actions"; // import actions
+import history from "../history"; // import history module
 
+/**
+ * Defining component class
+ */
 class FlightsList extends React.Component {
   row = (index, flight) => {
     return (
@@ -20,13 +23,13 @@ class FlightsList extends React.Component {
   };
 
   render() {
-    if (this.props.flights.length === 0) history.push("/");
+    if (this.props.flights.length === 0) history.push("/"); // redirecting if data not found
     return (
       <div class="container-fluid">
         <div class="container">
           <div class="row margin-auto">
             <div class="width-50 padding-class">
-              <h1 class="font-size-35">Flight list.</h1>
+              <h1 class="font-size-35">Flight list</h1>
             </div>
             <div class="width-50 padding-class">
               <button
@@ -64,7 +67,7 @@ class FlightsList extends React.Component {
 const mapStateToProps = (state) => {
   let flights =
     state.flights.response === undefined ? [] : state.flights.response;
-  return { flights: flights, terms: state.flights.search };
+  return { flights: flights, terms: state.flights.search }; // passing state data to component
 };
 
-export default connect(mapStateToProps, { clearSearch })(FlightsList);
+export default connect(mapStateToProps, { clearSearch })(FlightsList); // configuring component

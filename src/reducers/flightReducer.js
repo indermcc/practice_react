@@ -1,12 +1,12 @@
-import { SEARCH, CLEAR } from "../actions/types";
+import { SEARCH, CLEAR } from "../actions/types"; // import action types
 
 export default (state = {}, action) => {
   switch (action.type) {
     case SEARCH:
-      return action.payload;
+      return action.payload; // returning payload data
     case CLEAR:
-      return { ...state };
+      return {}; // returing empty object
     default:
-      return state;
+      return state; // returning default state object
   }
 };
