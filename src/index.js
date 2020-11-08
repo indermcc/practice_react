@@ -2,7 +2,7 @@ import React from "react"; // import react module
 import ReactDOM from "react-dom"; // import react dom module
 import { createStore, applyMiddleware, compose } from "redux"; // importing redux components
 import { Provider } from "react-redux"; // importing react redux connector
-import "./index.css"; // import default style sheet
+import "./scss/index.scss"; // import default style sheet
 import App from "./App"; // import app component
 import reduxThunk from "redux-thunk"; // enable Actions to handle asyncronous requests
 

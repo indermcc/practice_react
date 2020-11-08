@@ -2,7 +2,7 @@ import React from "react"; // import react module
 import { connect } from "react-redux";  // importing react redux connector
 import DatePicker from "react-datepicker"; // import datepicker module
 import { searchFlights } from "../actions"; // import actions
-
+import "../scss/SearchFlights.scss" // importing style
 /**
  * Defining component class
  */

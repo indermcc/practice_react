@@ -1,0 +1,26 @@
+.float-right {
+    float: right;
+  }
+  
+  .padding-class {
+    padding: 10px 0px 10px 0px;
+  }
+  
+  .width-50 {
+    width: 50%;
+  }
+  
+  .font-size-35 {
+    font-size: 35px;
+  }
+  
+  .margin-auto {
+    margin: 0 auto !important;
+  }
+  
+  @media only screen and (min-width: 1920px) {
+    .container-fluid {
+      width: 1920px !important;
+    }
+  }
+  

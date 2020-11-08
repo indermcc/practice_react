@@ -1,4 +1,3 @@
-import './App.css'; // import component style sheet
 import 'bootstrap/dist/css/bootstrap.min.css'; // import bootstrap style sheet
 import "react-datepicker/dist/react-datepicker.css"; // import datepicker style sheet
 

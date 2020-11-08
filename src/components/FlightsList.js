@@ -2,6 +2,7 @@ import React from "react"; // import react module
 import { connect } from "react-redux";  // import react reduct connector
 import { clearSearch } from "../actions"; // import actions
 import history from "../history"; // import history module
+import "../scss/FlightsList.scss" // importing style
 
 /**
  * Defining component class
@@ -12,7 +13,7 @@ class FlightsList extends React.Component {
       <tr key={index}>
         <th scope="row">{index + 1}</th>
         <td>
-          <img src={flight.AirlineLogoAddress} />
+          <img alt={flight.AirlineName} src={flight.AirlineLogoAddress} />
         </td>
         <td>{flight.AirlineName}</td>
         <td>{flight.InboundFlightsDuration}</td>
