@@ -1,4 +1,20 @@
-.float-right {
+.flight-list {
+  color: #ffffff;
+
+  h1 {
+    margin: 50px auto;
+  }
+
+  > .container {
+    background: rgba(0, 0, 0, 0.7);
+  }
+
+  > .table-container {
+    max-height: 540px;
+    overflow: scroll;
+  }
+
+  .float-right {
     float: right;
   }
   
@@ -18,9 +34,13 @@
     margin: 0 auto !important;
   }
   
+  .table {
+    color: #ffffff;
+  }
+
   @media only screen and (min-width: 1920px) {
     .container-fluid {
       width: 1920px !important;
     }
   }
-  
+}

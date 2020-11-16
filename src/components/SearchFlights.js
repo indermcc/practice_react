@@ -9,19 +9,47 @@ import "../scss/SearchFlights.scss" // importing style
 class SearchFlights extends React.Component {
 
   state = {
-    DepartureDate: "",
-    ReturnDate: "",
-    DepartureAirportCode: "",
-    ArrivalAirportCode: "",
+    departureDate: "",
+    returnDate: "",
+    departureAirportCode: "",
+    arrivalAirportCode: "",
+    trip: "oneWay"
   };
+
+  tripHandler = (trip) => {
+    this.setState({trip});
+  }
 
   render() {
     return (
-      <div class="container-fluid">
-        <div class="container">
-          <div class="form-class">
-            <h1 class="text-center">Search for a flight</h1>
+      <div className="search-flights container-fluid">
+        <h1 className="text-center">Search for a Flight</h1>
+        <div className="container">
+          <div className="form-class">
             <form className="search-form">
+              <div className="form-group form-group-radio">
+                <div className="form-check form-check-inline">
+                  <label>
+                    <input
+                      className="form-check-input"
+                      type="radio"
+                      name="release"
+                      defaultChecked
+                      onClick={(e) => this.tripHandler("oneWay")}
+                    /> One Way
+                  </label>
+                </div>
+                <div className="form-check form-check-inline">
+                  <label>
+                    <input
+                      className="form-check-input"
+                      type="radio"
+                      name="release"
+                      onClick={(e) => this.tripHandler("return")}
+                    /> Return
+                  </label>
+                </div>
+              </div>
               <div className="form-group">
                 <label>
                   Departure airport code
@@ -30,9 +58,9 @@ class SearchFlights extends React.Component {
                   type="text"
                   className="form-control"
                   placeholder="Departure airport code"
-                  value={this.state.DepartureAirportCode}
+                  value={this.state.departureAirportCode}
                   onChange={(code) => {
-                    this.setState({ DepartureAirportCode: code.target.value });
+                    this.setState({ departureAirportCode: code.target.value });
                   }}
                 />
               </div>
@@ -44,9 +72,9 @@ class SearchFlights extends React.Component {
                   type="text"
                   className="form-control"
                   placeholder="Arrival airport code"
-                  value={this.state.ArrivalAirportCode}
+                  value={this.state.arrivalAirportCode}
                   onChange={(code) => {
-                    this.setState({ ArrivalAirportCode: code.target.value });
+                    this.setState({ arrivalAirportCode: code.target.value });
                   }}
                 />
               </div>
@@ -58,26 +86,34 @@ class SearchFlights extends React.Component {
                 <DatePicker
                   className="form-control"
                   placeholder="Departure Date"
-                  selected={this.state.DepartureDate}
-                  onChange={(date) => this.setState({ DepartureDate: date })}
+                  showTimeSelect
+                  timeFormat="HH:mm"
+                  dateFormat="MMMM d, yyyy HH:mm"
+                  selected={this.state.departureDate}
+                  onChange={(date) => this.setState({ departureDate: date })}
                 />
               </div>
-              <div className="form-group">
-                <label>
-                  Return Date
-                </label>
-                <br></br>
-                <DatePicker
-                  className="form-control"
-                  placeholder="Return Date"
-                  selected={this.state.ReturnDate}
-                  onChange={(date) => this.setState({ ReturnDate: date })}
-                />
-              </div>
-              <div class="btn-class">
+              {this.state.trip === "return" && 
+                <div className="form-group">
+                  <label>
+                    Return Date
+                  </label>
+                  <br></br>
+                  <DatePicker
+                    className="form-control"
+                    placeholder="Return Date"
+                    showTimeSelect
+                    timeFormat="HH:mm"
+                    dateFormat="MMMM d, yyyy HH:mm"
+                    selected={this.state.returnDate}
+                    onChange={(date) => this.setState({ returnDate: date })}
+                  />
+                </div>
+              }
+              <div className="btn-class">
                 <button
                   type="button"
-                  className="btn btn-primary"
+                  className="btn flight-search-btn"
                   onClick={() => this.props.searchFlights(this.state)}
                 >
                   Search

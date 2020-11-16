@@ -1,5 +1,16 @@
-.form-class {
-    margin: auto;
+.search-flights {
+  color: #ffffff;
+
+  h1 {
+    margin: 50px auto;
+  }
+
+  > .container {
+    background: rgba(0, 0, 0, 0.7);
+  }
+
+  .form-class {
+    padding: 20px;
   }
   
   .form-class > h1 {
@@ -8,4 +19,20 @@
   
   .btn-class {
     text-align: center;
+    margin: 20px 0;
   }
+
+  .react-datepicker-wrapper {
+    width: 50%;
+  }
+
+  .form-group-radio {
+    label {
+      cursor: pointer;
+    }
+
+    input {
+      cursor: pointer;
+    }
+  }
+}

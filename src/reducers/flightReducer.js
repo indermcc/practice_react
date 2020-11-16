@@ -1,6 +1,6 @@
 import { SEARCH, CLEAR } from "../actions/types"; // import action types
 
-export default (state = {}, action) => {
+const flight =  (state = {}, action) => {
   switch (action.type) {
     case SEARCH:
       return action.payload; // returning payload data
@@ -10,3 +10,5 @@ export default (state = {}, action) => {
       return state; // returning default state object
   }
 };
+
+export default flight;
